@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Projeto health track - FIAP - Aluno Renné Castrucci Ramalho - RM92351">
+    <meta name="keywords" content="HTML5, CSS, JavaScript, Bootstrap, FIAP">
+    <meta name="author" content="Renné Castrucci">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <!-- Dashboard Style -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- My Script -->
+    <script src="../js/functions.js"></script>
+
+    <title>Health Track by RM92351</title>
+</head>
+
+<body>
+
+    <header class="navbar navbar-dark sticky-top bg-nav flex-md-nowrap p-0 shadow">
+        <div class="d-flex flex-column align-items-center navbar-brand ms-3 fs-5">
+            <span>Health</span>
+            <span>Track</span>
+        </div>
+        <button class="navbar-toggler position-absolute d-md-none collapsed mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- NAVIGATION BAR -->
+            <nav navbar="activities" id="sidebarMenu" class="col-md-3 col-xl-2 d-md-block bg-light sidebar collapse"></nav>
+
+            <!-- MAIN CONTENT -->
+            <main class="col-md-9 ms-sm-auto col-xl-10 px-md-4 pt-3">
+                <div class="d-flex justify-content-center">
+                    <div class="w-100 max-width-outer">
+                        <h1 class="display-5 m-0 text-capitalize">Atividades</h1>
+
+                        <!-- DIVIDER -->
+                        <div class="divider d-flex align-items-center mt-4">
+                            <span class="text-center mx-3 text-muted text-uppercase">Registrar Nova Atividade</span>
+                        </div>
+                        <!-- END OF DIVIDER -->
+
+                        <!-- REGISTER NEW ACTIVITIES -->
+                        <section class="row d-flex mt-3">
+                            <!-- DATA LIST NEW ACTIVITIE -->
+                            <div class="col-6 pe-2">
+                                <label for="exampleDataList" class="form-label">Atividade</label>
+                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Digite para procurar...">
+                                <datalist id="datalistOptions">
+                                    <option value="Caminhada">
+                                    <option value="Corrida">
+                                    <option value="Academia">
+                                    <option value="Bicicleta">
+                                    <option value="Natação">
+                                </datalist>
+                            </div>
+                            <!-- DATE -->
+                            <div class="col-6 ps-2">
+                                <label for="exampleDataList" class="form-label">Data</label>
+                                <input class="form-control" type="date">
+                            </div>
+                            <!-- DURATION -->
+                            <div class="col-6 pe-2 mt-3">
+                                <label for="exampleDataList" class="form-label">Duração</label>
+                                <input class="form-control" type="time">
+                            </div>
+                            <!-- DISTANCE -->
+                            <div class="col-6 ps-2 mt-3">
+                                <label for="exampleDataList" class="form-label">Distância</label>
+                                <input class="form-control" type="number" placeholder="km">
+                            </div>
+                            <!-- OBSERVAÇÕES -->
+                            <div class="form-floating mt-4">
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                <label class="ms-2 text-muted" for="floatingTextarea2">Observações</label>
+                            </div>
+
+                            <div class="d-flex justify-content-start mt-3">
+                                <button building-msg="true" class="btn btn-lighter-color btn-square mt-2">Registrar</button>
+                            </div>
+                        </section>
+
+                        <!-- DIVIDER -->
+                        <div class="divider d-flex align-items-center mt-4">
+                            <span class="text-center mx-3 text-muted text-uppercase">Registros</span>
+                        </div>
+                        <!-- END OF DIVIDER -->
+
+                        <div class="table-responsive">
+                            <!-- TOOLBAR ACTIVITIES FILTER -->
+                            <div class="btn-toolbar mb-2 mb-md-0 mt-4">
+                                <button type="button" class="btn btn-sm btn-lighter-color dropdown-toggle me-2">Todas as atividades</button>
+                                <button type="button" class="btn btn-sm btn-lighter-color dropdown-toggle">2 anos</button>
+                            </div>
+                            <!-- ACTIVITIES HISTORY TABLE -->
+                            <table class="table table-bordered table-light table-hover table-sm align-middle mt-2 text-center">
+                            <thead>
+                                <tr>
+                                <th colspan="5" class="text-center lead">Atividades</th>
+                                </tr>
+                                <tr>
+                                <th scope="col">Atividade</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Duração</th>
+                                <th scope="col">Distância</th>
+                                <th scope="col">Kcal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr valign="center">
+                                <td class="text-center">
+                                    <img src="../icons/walker.png" height="30px" alt="Caminhada" title="Caminhada">
+                                </td>
+                                <td>18/10/2021</td>
+                                <td>00:41</td>
+                                <td>3,07</td>
+                                <td>289</td>
+                                </tr>
+                                <tr>
+                                <td class="text-center">
+                                    <img src="../icons/bicycle.png" height="30px" alt="Bicicleta" title="Bicicleta">
+                                </td>
+                                <td>06/11/2021</td>
+                                <td>00:56</td>
+                                <td>2,26</td>
+                                <td>598</td>
+                                </tr>
+                                <tr>
+                                <td class="text-center">
+                                    <img src="../icons/gym.png" height="30px" alt="Academia" title="Academia">
+                                </td>
+                                <td>25/05/2021</td>
+                                <td>00:25</td>
+                                <td></td>
+                                <td>166</td>
+                                </tr>
+                                <tr>
+                                <td class="text-center">
+                                    <img src="../icons/bicycle.png" height="30px" alt="Bicicleta" title="Bicicleta">
+                                </td>
+                                <td>24/05/2021</td>
+                                <td>00:40</td>
+                                <td>6,16</td>
+                                <td>333</td>
+                                </tr>
+                                <tr>
+                                <td class="text-center">
+                                    <img src="../icons/bicycle.png" height="30px" alt="Bicicleta" title="Bicicleta">
+                                </td>
+                                <td>25/04/2021</td>
+                                <td>01:20</td>
+                                <td>7,51</td>
+                                <td>686</td>
+                                </tr>
+                                <tr>
+                                <td class="text-center">
+                                    <img src="../icons/swimmer.png" height="30px" alt="Natação" title="Natação">
+                                </td>
+                                <td>15/03/2021</td>
+                                <td>01:30</td>
+                                <td>4,10</td>
+                                <td>843</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <!-- END OF ACTIVITIES TABLE -->
+                        </div>
+                    </div>
+                </div>
+            <!-- END OF MAIN -->
+            </main>
+        <!-- END OF ROW -->
+        </div>
+    <!-- END OF CONTAINER -->
+    </div>
+
+    <!-- TOAST UNDER CONSTRUCTION -->
+    <div id="toast-div"></div>
+    <!-- END OF TOAST -->
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
