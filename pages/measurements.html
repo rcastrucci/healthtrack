@@ -36,13 +36,68 @@
     <div class="container-fluid">
         <div class="row">
             <!-- NAVIGATION BAR -->
-            <nav navbar="measurements" id="sidebarMenu" class="col-md-3 col-xl-2 d-md-block bg-light sidebar collapse"></nav>
+            <nav id="sidebarMenu" class="col-md-3 col-xl-2 d-md-block bg-light sidebar collapse">
+                <!-- PROFILE IMAGE -->
+                <a href="../pages/account.html">
+                    <figure class="d-flex text-muted align-items-center mt-3">
+                        <img src="../images/profile.png" class="border border-2 rounded-circle img-fluid profile-img ms-3 m-2" alt="Foto perfil">
+                        <figcaption>Renné Castrucci</figcaption>
+                    </figure>
+                </a>
+                <!-- DIVIDER -->
+                <div class="divider d-flex mb-3"></div>
+                <!-- OPTIONS -->
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./start.html">
+                        <i class="bi bi-house-door feather">&ThickSpace;Início</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./activities.html">
+                        <i class="bi bi-activity feather">&ThickSpace;Atividades</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./measurements.html">
+                        <i class="bi bi-table feather">&ThickSpace;Registros</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./progress.html">
+                        <i class="bi bi-bar-chart-fill feather">&ThickSpace;Progresso</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./articles.html">
+                        <i class="bi bi-info-square feather">&ThickSpace;Artigos</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./setup.html">
+                        <i class="bi bi-gear feather">&ThickSpace;Configurações</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./account.html">
+                        <i class="bi bi-card-checklist feather">&ThickSpace;Minha conta</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                        <i class="bi bi-box-arrow-in-left feather">&ThickSpace;Sair</i>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
 
             <!-- MAIN CONTENT -->
             <main class="col-md-9 ms-sm-auto col-xl-10 px-md-4 pt-3">
                 <div class="d-flex justify-content-center">
                     <div class="w-100 max-width-outer">
-                        <h1 class="display-5 m-0 text-capitalize">Medições</h1>
+                        <h1 class="display-5 m-0 text-capitalize">Registros</h1>
 
                         <!-- DIVIDER -->
                         <div class="divider d-flex align-items-center mt-4">
@@ -60,7 +115,8 @@
                             <!-- WEIGHT -->
                             <div class="col-6 ps-2">
                                 <label for="measurementsWeight" class="form-label">Peso</label>
-                                <input class="form-control" type="number" placeholder="kg" name="measurementsWeight" id="measurementsWeight" oninput="calculateIMC(1.83);">                            </div>
+                                <input class="form-control" type="number" placeholder="kg" name="measurementsWeight" id="measurementsWeight" oninput="calculateIMC(1.83);">
+                            </div>
                             <!-- IMC DISPLAY -->
                             <div class="col-6 pe-2 mt-3">
                                 <label for="measurementsIMC" class="form-label">IMC</label>
@@ -78,23 +134,18 @@
                         </section>               
 
                         <!-- DIVIDER -->
-                        <div class="divider d-flex align-items-center mt-4">
-                            <span class="text-center mx-3 text-muted text-uppercase">Registros</span>
-                        </div>
+                        <div class="divider d-flex align-items-center mt-4"></div>
                         <!-- END OF DIVIDER -->
 
                         <section class="table-responsive">
                             <!-- TOOLBAR WEIGHT HISTORY FILTER -->
-                            <div class="btn-toolbar mb-2 mb-md-0 mt-3">
+                            <div class="btn-toolbar mb-2 mb-md-0 mt-4 justify-content-end">
                                 <button type="button" class="btn btn-sm btn-lighter-color me-2">Compartilhar</button>
                                 <button type="button" class="btn btn-sm btn-lighter-color dropdown-toggle">6 meses</button>
                             </div>
                             <!-- WEIGHT HISTORY TABLE -->
-                            <table class="table table-bordered table-light table-hover table-sm mt-2 align-middle mb-5 text-center">
+                            <table class="table table-bordered table-hover table-color table-lg mt-2 align-middle mb-5 text-center">
                                 <thead>
-                                    <tr>
-                                    <th colspan="4" class="text-center lead">Medições</th>
-                                    </tr>
                                     <tr>
                                     <th scope="col">Data</th>
                                     <th scope="col">Peso Kg</th>

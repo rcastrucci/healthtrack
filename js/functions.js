@@ -57,90 +57,6 @@ function enableButton(buttonId) {
     button.disabled = !(isEmailValid(inputEmail.value) && (inputPass.value.length >= 4));
 }
 
-function navBarMenu(linkActive) {
-    let start, activities, measurements, progress, setup, history, articles, account = '';
-    switch (linkActive) {
-        case 'start':
-            start = 'active';
-            break;
-        case 'activities':
-            activities = 'active';
-            break;
-        case 'measurements':
-            measurements = 'active';
-            break;
-        case 'progress':
-            progress = 'active';
-            break;
-        case 'setup':
-            setup = 'active';
-            break;
-        case 'articles':
-            articles = 'active';
-            break;
-        case 'account':
-            account = 'active';
-            break;
-    }
-
-    return `
-    <!-- PROFILE IMAGE -->
-    <a href="../pages/account.html">
-        <figure class="d-flex text-muted align-items-center mt-3">
-            <img src="../images/profile.png" class="border border-2 rounded-circle img-fluid profile-img ms-3 m-2" alt="Foto perfil">
-            <figcaption>Renné Castrucci</figcaption>
-        </figure>
-    </a>
-    <!-- DIVIDER -->
-    <div class="divider d-flex mb-3"></div>
-    <!-- END DIVIDER -->
-    <div class="position-sticky">
-        <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link ${start}" aria-current="page" href="./start.html">
-            <i class="bi bi-house-door feather">&ThickSpace;Início</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ${activities}" aria-current="page" href="./activities.html">
-            <i class="bi bi-activity feather">&ThickSpace;Atividades</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ${measurements}" aria-current="page" href="./measurements.html">
-            <i class="bi bi-rulers feather">&ThickSpace;Medições</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ${progress}" aria-current="page" href="./progress.html">
-            <i class="bi bi-bar-chart-fill feather">&ThickSpace;Progresso</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ${articles}" aria-current="page" href="./articles.html">
-            <i class="bi bi-info-square feather">&ThickSpace;Artigos</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ${setup}" aria-current="page" href="./setup.html">
-            <i class="bi bi-card-checklist feather">&ThickSpace;Configurações</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link ${account}" aria-current="page" href="./account.html">
-            <i class="bi bi-card-checklist feather">&ThickSpace;Minha conta</i>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="../index.html">
-            <i class="bi bi-box-arrow-in-left feather">&ThickSpace;Sair</i>
-            </a>
-        </li>
-        </ul>
-    </div>
-    `;
-}
-
 function buildToast() {
     return `
     <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 100">
@@ -188,6 +104,31 @@ if (container) {
 }
 }
 
+function activityList(container) {
+    if (container) {
+        let list = ["Aeróbica","Alongamentos","Andebol", "Artes Marciais", "Badminton", "Ballet", "Basebol", "Basebol Finlandês",
+                    "Basquetebol", "Biatlo", "Boxe", "Caiaque", "Caminhada", "Caminhada em raquetes de neve", "Caminhada nordica",
+                    "Campo de treino", "Canoagem", "Ciclismo", "Ciclismo de estrada", "Ciclismo de montanha", "Ciclismo em pista coberta",
+                    "Clássico esqui de fundo", "Corpo e mente", "Corrida", "Corrida de estrada", "Corrida em cadeira de rodas",
+                    "Corrida em passadeira rolante", "Corrida em trilhos", "Corrida ultra", "Corridas de atletismo", "Cross-training",
+                    "Criquete", "Dança", "Dança fitness", "Equitação", "Escalada (interior)", "Esqui aquático", "Esqui de fundo",
+                    "Esqui de rodas - clássico", "Esqui de rodas - estilo livre", "Esqui downhill", "Esqui telemark", "Esquiar",
+                    "Estilo livre esqui de fundo", "Exercício em grupo", "Exercícios step", "Fitness aquática", "Floorball",
+                    "Futebol", "Futebol americano", "Futsal", "Ginástica", "Golfe", "Golfe de disco", "HIIT", "Hóquei no gelo",
+                    "Ioga", "Jazz", "Jogging", "Judo", "Kickboxing", "Kitesurfing", "Latina", "Mobilidade dinâmica", "Mobilidade estática",
+                    "Moderna", "Natação", "Natação em águas abertas", "Natação piscina", "Orientação", "Orientação em bicicleta",
+                    "Orientação em esqui", "Outro ao ar livre", "Outro de interior", "Patinagem", "Patinagem com patins de 4 rodas",
+                    "Patinagem com patins em linha", "Patinagem no gelo", "Pedestrianismo", "Pilates", "Remo", "Remo em recinto coberto",
+                    "Rua", "Râguebi", "Salão", "Show", "Snowboarding", "Spinning", "Squash", "Surfing", "Treino de força",
+                    "Treino em circuito", "Treino funcional", "Tronco", "Trote", "Tênis", "Tênis de mesa", "Vela", "Voleibol",
+                    "Voleibol de praia", "Wakeboarding", "Windsurfing"];
+
+        list.forEach(value => {
+            container.innerHTML += `<option value="${value}">`;
+        });
+    }
+}
+
 function calculateIMC(usersHeight) {
     const imc = document.getElementById("measurementsIMC");
     let weight = document.getElementById("measurementsWeight");
@@ -204,21 +145,14 @@ window.onload = () => {
     const buildingMsg = document.querySelectorAll('[building-msg]');
     const imgAlt = document.querySelectorAll('[data-alt]');
     const toastDiv = document.getElementById('toast-div');
-    const navbar = document.querySelector('[navbar]');
     const feed = document.getElementById('feed');
     const buttonOnOff = document.querySelectorAll('[button-on-off]');
+    const activityListOptions = document.getElementById('activityListOptions');
 
-    if (logoElement) {
-        logoElement.style.top = '0px';
-    }
-    if (navbar) {
-        navbar.innerHTML = navBarMenu(navbar.getAttribute('navbar'));
-    }
-    if (toastDiv) {
-        toastDiv.innerHTML = buildToast();
-    }
+    if (logoElement) logoElement.style.top = '0px';
+    if (toastDiv) toastDiv.innerHTML = buildToast();
 
-    /* TRANSITIONS CSS OPACITY */
+    /* TRANSITIONS OPACITY */
     document.querySelectorAll('.transition-opacity').forEach(element => element.style.opacity = '1.0');
 
     /* TOAST MESSAGES */
@@ -226,7 +160,7 @@ window.onload = () => {
         element.href='javascript:void(0)';
         let msg;
         switch (element.getAttribute('building-msg')) {
-            case 'true':
+            case 'function':
                 msg = 'Estamos trabalhando nesta funcionalidade';
                 break;
             case 'img':
@@ -268,6 +202,6 @@ window.onload = () => {
         element.setAttribute('src', alt);
         element.setAttribute('data-alt', temp);
     }));
-
+    activityList(activityListOptions);
     displayFeed(feed);
 }

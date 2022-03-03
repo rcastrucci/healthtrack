@@ -36,7 +36,62 @@
     <div class="container-fluid">
         <div class="row">
             <!-- NAVIGATION BAR -->
-            <nav navbar="activities" id="sidebarMenu" class="col-md-3 col-xl-2 d-md-block bg-light sidebar collapse"></nav>
+            <nav id="sidebarMenu" class="col-md-3 col-xl-2 d-md-block bg-light sidebar collapse">
+                <!-- PROFILE IMAGE -->
+                <a href="../pages/account.html">
+                    <figure class="d-flex text-muted align-items-center mt-3">
+                        <img src="../images/profile.png" class="border border-2 rounded-circle img-fluid profile-img ms-3 m-2" alt="Foto perfil">
+                        <figcaption>Renné Castrucci</figcaption>
+                    </figure>
+                </a>
+                <!-- DIVIDER -->
+                <div class="divider d-flex mb-3"></div>
+                <!-- OPTIONS -->
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./start.html">
+                        <i class="bi bi-house-door feather">&ThickSpace;Início</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./activities.html">
+                        <i class="bi bi-activity feather">&ThickSpace;Atividades</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./measurements.html">
+                        <i class="bi bi-table feather">&ThickSpace;Registros</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./progress.html">
+                        <i class="bi bi-bar-chart-fill feather">&ThickSpace;Progresso</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./articles.html">
+                        <i class="bi bi-info-square feather">&ThickSpace;Artigos</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./setup.html">
+                        <i class="bi bi-gear feather">&ThickSpace;Configurações</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./account.html">
+                        <i class="bi bi-card-checklist feather">&ThickSpace;Minha conta</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                        <i class="bi bi-box-arrow-in-left feather">&ThickSpace;Sair</i>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
 
             <!-- MAIN CONTENT -->
             <main class="col-md-9 ms-sm-auto col-xl-10 px-md-4 pt-3">
@@ -54,29 +109,23 @@
                         <section class="row d-flex mt-3">
                             <!-- DATA LIST NEW ACTIVITIE -->
                             <div class="col-6 pe-2">
-                                <label for="exampleDataList" class="form-label">Atividade</label>
-                                <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Digite para procurar...">
-                                <datalist id="datalistOptions">
-                                    <option value="Caminhada">
-                                    <option value="Corrida">
-                                    <option value="Academia">
-                                    <option value="Bicicleta">
-                                    <option value="Natação">
-                                </datalist>
+                                <label for="activityList" class="form-label">Atividade</label>
+                                <input class="form-control" list="activityListOptions" id="activityList" placeholder="">
+                                <datalist id="activityListOptions"></datalist>
                             </div>
                             <!-- DATE -->
                             <div class="col-6 ps-2">
-                                <label for="exampleDataList" class="form-label">Data</label>
+                                <label for="activityList" class="form-label">Data</label>
                                 <input class="form-control" type="date">
                             </div>
                             <!-- DURATION -->
                             <div class="col-6 pe-2 mt-3">
-                                <label for="exampleDataList" class="form-label">Duração</label>
+                                <label for="activityList" class="form-label">Duração</label>
                                 <input class="form-control" type="time">
                             </div>
                             <!-- DISTANCE -->
                             <div class="col-6 ps-2 mt-3">
-                                <label for="exampleDataList" class="form-label">Distância</label>
+                                <label for="activityList" class="form-label">Distância</label>
                                 <input class="form-control" type="number" placeholder="km">
                             </div>
                             <!-- OBSERVAÇÕES -->
@@ -91,23 +140,18 @@
                         </section>
 
                         <!-- DIVIDER -->
-                        <div class="divider d-flex align-items-center mt-4">
-                            <span class="text-center mx-3 text-muted text-uppercase">Registros</span>
-                        </div>
-                        <!-- END OF DIVIDER -->
+                        <div class="divider d-flex align-items-center mt-4"></div>
 
-                        <div class="table-responsive">
+                        <!-- TABELA -->
+                        <section class="table-responsive mb-5">
                             <!-- TOOLBAR ACTIVITIES FILTER -->
-                            <div class="btn-toolbar mb-2 mb-md-0 mt-4">
+                            <div class="btn-toolbar mb-2 mb-md-0 mt-4 justify-content-end">
                                 <button type="button" class="btn btn-sm btn-lighter-color dropdown-toggle me-2">Todas as atividades</button>
                                 <button type="button" class="btn btn-sm btn-lighter-color dropdown-toggle">2 anos</button>
                             </div>
                             <!-- ACTIVITIES HISTORY TABLE -->
-                            <table class="table table-bordered table-light table-hover table-sm align-middle mt-2 text-center">
+                            <table class="table table-bordered table-hover table-color table-lg align-middle mt-2 text-center">
                             <thead>
-                                <tr>
-                                <th colspan="5" class="text-center lead">Atividades</th>
-                                </tr>
                                 <tr>
                                 <th scope="col">Atividade</th>
                                 <th scope="col">Data</th>
@@ -119,7 +163,7 @@
                             <tbody>
                                 <tr valign="center">
                                 <td class="text-center">
-                                    <img src="../icons/walker.png" height="30px" alt="Caminhada" title="Caminhada">
+                                    <img src="../icons/walker.png" alt="Caminhada" title="Caminhada" class="imgIcon">
                                 </td>
                                 <td>18/10/2021</td>
                                 <td>00:41</td>
@@ -128,7 +172,7 @@
                                 </tr>
                                 <tr>
                                 <td class="text-center">
-                                    <img src="../icons/bicycle.png" height="30px" alt="Bicicleta" title="Bicicleta">
+                                    <img src="../icons/bicycle.png" alt="Bicicleta" title="Bicicleta" class="imgIcon">
                                 </td>
                                 <td>06/11/2021</td>
                                 <td>00:56</td>
@@ -137,7 +181,7 @@
                                 </tr>
                                 <tr>
                                 <td class="text-center">
-                                    <img src="../icons/gym.png" height="30px" alt="Academia" title="Academia">
+                                    <img src="../icons/gym.png" alt="Academia" title="Academia" class="imgIcon">
                                 </td>
                                 <td>25/05/2021</td>
                                 <td>00:25</td>
@@ -146,7 +190,7 @@
                                 </tr>
                                 <tr>
                                 <td class="text-center">
-                                    <img src="../icons/bicycle.png" height="30px" alt="Bicicleta" title="Bicicleta">
+                                    <img src="../icons/bicycle.png" alt="Bicicleta" title="Bicicleta" class="imgIcon">
                                 </td>
                                 <td>24/05/2021</td>
                                 <td>00:40</td>
@@ -155,7 +199,7 @@
                                 </tr>
                                 <tr>
                                 <td class="text-center">
-                                    <img src="../icons/bicycle.png" height="30px" alt="Bicicleta" title="Bicicleta">
+                                    <img src="../icons/bicycle.png" alt="Bicicleta" title="Bicicleta" class="imgIcon">
                                 </td>
                                 <td>25/04/2021</td>
                                 <td>01:20</td>
@@ -164,7 +208,7 @@
                                 </tr>
                                 <tr>
                                 <td class="text-center">
-                                    <img src="../icons/swimmer.png" height="30px" alt="Natação" title="Natação">
+                                    <img src="../icons/swimmer.png" alt="Natação" title="Natação" class="imgIcon">
                                 </td>
                                 <td>15/03/2021</td>
                                 <td>01:30</td>
@@ -174,7 +218,7 @@
                             </tbody>
                             </table>
                             <!-- END OF ACTIVITIES TABLE -->
-                        </div>
+                        </section>
                     </div>
                 </div>
             <!-- END OF MAIN -->
