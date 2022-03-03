@@ -33,7 +33,7 @@
     /* PROGRESS BAR */
     --progressBarBackgroundColor: rgb(5, 80, 150, 1);
     /* TABLES */
-    --tableBackgroundColor: rgba(170, 220, 255, 0.1);
+    --tableBackgroundColor: rgba(220, 230, 255, 0.1);
     --tableBorderColor: rgb(5, 80, 150, 1);
     /* TOAST */
     --toastTextColor: white;
