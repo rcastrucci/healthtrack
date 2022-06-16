@@ -8,4 +8,4 @@
 
 ###### Still in development
 ###### Login page screen shot
-![login page health track](https://rcastrucci.com/dev/projects/healthtrack/images/screen_shot.png)
+![login page health track](https://github.com/rcastrucci/healthtrack/blob/master/images/loginPage.png)
